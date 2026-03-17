@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: saucedemo-tests
+spec:
+  template:
+    spec:
+      containers:
+        - name: playwright
+          image: testhawkqa/saucedemo-playwright:latest
+          imagePullPolicy: Always
+      restartPolicy: Never
+  backoffLimit: 0
